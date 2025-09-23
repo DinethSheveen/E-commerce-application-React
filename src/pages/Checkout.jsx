@@ -1,6 +1,7 @@
 import React from "react";
 import "./Checkout.css"
 import "./Checkout-header.css"
+import {Link} from "react-router"
 
 function Checkout() {
   return (
@@ -9,14 +10,14 @@ function Checkout() {
       <div className="checkout-header">
         <div className="header-content">
           <div className="checkout-header-left-section">
-            <a href="/" className="header-link">E Commerce Website</a>
+            <Link to="/" className="header-link">E Commerce Website</Link>
           </div>
 
           <div className="checkout-header-middle-section">
             Checkout (
-            <a className="return-to-home-link" href="/">
+            <Link className="return-to-home-link" to="/">
               3 items
-            </a>
+            </Link>
             )
           </div>
 

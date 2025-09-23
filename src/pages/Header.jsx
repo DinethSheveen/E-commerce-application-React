@@ -1,14 +1,15 @@
 import React from "react";
 import "./Header.css"
+import { Link } from "react-router";
 
 function Header() {
   return (
     <>
       <div className="header">
         <div className="left-section">
-          <a href="/" className="header-link">
+          <Link to="/" className="header-link">
             E Commerce Website
-          </a>
+          </Link>
         </div>
 
         <div className="middle-section">
@@ -20,15 +21,15 @@ function Header() {
         </div>
 
         <div className="right-section">
-          <a className="orders-link header-link" href="orders">
+          <Link className="orders-link header-link" to="/orders">
             <span className="orders-text">Orders</span>
-          </a>
+          </Link>
 
-          <a className="cart-link header-link" href="checkout">
+          <Link className="cart-link header-link" to="/checkout">
             <img className="cart-icon" src="images/icons/cart-icon.png" />
             <div className="cart-quantity">3</div>
             <div className="cart-text">Cart</div>
-          </a>
+          </Link>
         </div>
       </div>
     </>

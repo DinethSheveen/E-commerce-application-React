@@ -3,26 +3,21 @@ import "./Homepage.css";
 import Header from "../assets/components/Header";
 import { useEffect,useState } from "react";
 
-function Homepage() {
+function Homepage(props) {
 
   const[products,setProducts] = useState([])
-  const[cart,setCart] = useState([])
 
   //FETCHING DATA FROM THE BACKEND  (ASYNC CODE - TAKES SOME TIME TO FINISH)
   useEffect(()=>{
       axios.get("/api/products").then((response)=>{
         setProducts(response.data);
       })
-
-      axios.get("/api/cart-items").then((response)=>{
-        setCart(response.data);
-      })
   },[])
 
   return (
     <>
       <title>E Commerce Website</title>
-      <Header cartProducts={cart}/>
+      <Header cartProducts={props.cartProducts}/>
       <div>
         <div className="home-page">
           <div className="products-grid">

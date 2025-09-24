@@ -5,9 +5,11 @@ function Header(props) {
 
   let totalItems = 0
   
-  props.cartProducts.forEach(cartProduct => {
-    totalItems+=cartProduct.quantity
-  });
+  if(props.cartProducts){
+    props.cartProducts.forEach(cartProduct => {
+      totalItems+=cartProduct.quantity
+    });
+  }
 
   return (
     <>

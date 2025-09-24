@@ -5,6 +5,15 @@ import Header from "./Header";
 import { products } from "../assets/data/products";
 
 function Homepage() {
+
+  //FETCHING DATA FROM THE BACKEND  (ASYNC CODE - TAKES SOME TIME TO FINISH)
+  fetch("http://localhost:3000/api/products").then((response)=>{      //RETURNS A PROMISE
+    return response.json();
+  }).then((data)=>{
+    console.log(data);
+    
+  })
+
   return (
     <>
       <title>E Commerce Website</title>

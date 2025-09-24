@@ -1,7 +1,6 @@
 import axios from "axios"
-import "./header.css";
 import "./Homepage.css";
-import Header from "./Header";
+import Header from "../assets/components/Header";
 import { useEffect,useState } from "react";
 
 function Homepage() {

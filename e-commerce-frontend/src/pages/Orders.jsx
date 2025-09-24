@@ -1,6 +1,6 @@
 import React from "react";
 import "./Orders.css"
-import Header from "./Header"
+import Header from "../assets/components/Header"
 import { Link } from "react-router";
 
 function Orders() {

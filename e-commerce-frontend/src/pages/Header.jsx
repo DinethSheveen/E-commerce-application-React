@@ -1,8 +1,14 @@
-import React from "react";
 import "./Header.css"
 import { Link } from "react-router";
 
-function Header() {
+function Header(props) {
+
+  let totalItems = 0
+  
+  props.cartProducts.forEach(cartProduct => {
+    totalItems+=cartProduct.quantity
+  });
+
   return (
     <>
       <div className="header">
@@ -27,7 +33,7 @@ function Header() {
 
           <Link className="cart-link header-link" to="/checkout">
             <img className="cart-icon" src="images/icons/cart-icon.png" />
-            <div className="cart-quantity">3</div>
+            <div className="cart-quantity">{totalItems}</div>
             <div className="cart-text">Cart</div>
           </Link>
         </div>

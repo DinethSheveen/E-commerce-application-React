@@ -7,18 +7,23 @@ import { useEffect,useState } from "react";
 function Homepage() {
 
   const[products,setProducts] = useState([])
+  const[cart,setCart] = useState([])
 
   //FETCHING DATA FROM THE BACKEND  (ASYNC CODE - TAKES SOME TIME TO FINISH)
   useEffect(()=>{
       axios.get("http://localhost:3000/api/products").then((response)=>{
-      setProducts(response.data);
-    })
+        setProducts(response.data);
+      })
+
+      axios.get("http://localhost:3000/api/cart-items").then((response)=>{
+        setCart(response.data);
+      })
   },[])
 
   return (
     <>
       <title>E Commerce Website</title>
-      <Header />
+      <Header cartProducts={cart}/>
       <div>
         <div className="home-page">
           <div className="products-grid">

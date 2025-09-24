@@ -1,18 +1,19 @@
-import React from "react";
+import axios from "axios"
 import "./header.css";
 import "./Homepage.css";
 import Header from "./Header";
-import { products } from "../assets/data/products";
+import { useEffect,useState } from "react";
 
 function Homepage() {
 
+  const[products,setProducts] = useState([])
+
   //FETCHING DATA FROM THE BACKEND  (ASYNC CODE - TAKES SOME TIME TO FINISH)
-  fetch("http://localhost:3000/api/products").then((response)=>{      //RETURNS A PROMISE
-    return response.json();
-  }).then((data)=>{
-    console.log(data);
-    
-  })
+  useEffect(()=>{
+      axios.get("http://localhost:3000/api/products").then((response)=>{
+      setProducts(response.data);
+    })
+  },[])
 
   return (
     <>
@@ -25,28 +26,28 @@ function Homepage() {
               return (
                 <div className="product-container" key={index}>
                   <div className="product-image-container">
-                    <img className="product-image" src={product.productImage} />
+                    <img className="product-image" src={product.image} />
                   </div>
 
                   <div className="product-name limit-text-to-2-lines">
-                    {product.productName}
+                    {product.name}
                   </div>
 
                   <div className="product-rating-container">
                     <img
                       className="product-rating-stars"
                       src={`images/ratings/rating-${
-                        product.productRating.stars * 10
+                        product.rating.stars * 10
                       }.png`}
                     />
                     <div className="product-rating-count link-primary">
-                      {product.productRating.count}
+                      {product.rating.count}
                     </div>
                   </div>
 
                   <div className="product-price">
                     &pound;
-                    {`${(product.productPrice / 100).toFixed(2)}`}
+                    {`${(product.priceCents / 100).toFixed(2)}`}
                   </div>
 
                   <div className="product-quantity-container">

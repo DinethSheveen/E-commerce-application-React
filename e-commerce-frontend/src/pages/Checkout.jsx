@@ -52,10 +52,10 @@ function Checkout(props) {
                       <div className="product-name">
                         {cartProduct.product.name}
                       </div>
-                      <div className="product-price">{(cartProduct.product.priceCents/100).toFixed(2)}</div>
+                      <div className="product-price">&pound;{(cartProduct.product.priceCents/100).toFixed(2)}</div>
                       <div className="product-quantity">
                         <span>
-                          Quantity: <span className="quantity-label">2</span>
+                          Quantity: <span className="quantity-label">{cartProduct.quantity}</span>
                         </span>
                         <span className="update-quantity-link link-primary">
                           Update
@@ -97,7 +97,7 @@ function Checkout(props) {
                             Wednesday, June 15
                           </div>
                           <div className="delivery-option-price">
-                            $4.99 - Shipping
+                            &pound;4.99 - Shipping
                           </div>
                         </div>
                       </div>
@@ -112,7 +112,7 @@ function Checkout(props) {
                             Monday, June 13
                           </div>
                           <div className="delivery-option-price">
-                            $9.99 - Shipping
+                            &pound;9.99 - Shipping
                           </div>
                         </div>
                       </div>
@@ -128,27 +128,27 @@ function Checkout(props) {
 
             <div className="payment-summary-row">
               <div>Items (3):</div>
-              <div className="payment-summary-money">$42.75</div>
+              <div className="payment-summary-money">&pound;42.75</div>
             </div>
 
             <div className="payment-summary-row">
               <div>Shipping &amp; handling:</div>
-              <div className="payment-summary-money">$4.99</div>
+              <div className="payment-summary-money">&pound;4.99</div>
             </div>
 
             <div className="payment-summary-row subtotal-row">
               <div>Total before tax:</div>
-              <div className="payment-summary-money">$47.74</div>
+              <div className="payment-summary-money">&pound;47.74</div>
             </div>
 
             <div className="payment-summary-row">
               <div>Estimated tax (10%):</div>
-              <div className="payment-summary-money">$4.77</div>
+              <div className="payment-summary-money">&pound;4.77</div>
             </div>
 
             <div className="payment-summary-row total-row">
               <div>Order total:</div>
-              <div className="payment-summary-money">$52.51</div>
+              <div className="payment-summary-money">&pound;52.51</div>
             </div>
 
             <button className="place-order-button button-primary">

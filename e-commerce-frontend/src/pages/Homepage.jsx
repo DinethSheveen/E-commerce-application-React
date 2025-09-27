@@ -1,23 +1,24 @@
-import axios from "axios"
+import axios from "axios";
 import "./Homepage.css";
 import Header from "../assets/components/Header";
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 
 function Homepage(props) {
-
-  const[products,setProducts] = useState([])
+  const [products, setProducts] = useState([]);
 
   //FETCHING DATA FROM THE BACKEND  (ASYNC CODE - TAKES SOME TIME TO FINISH)
-  useEffect(()=>{
-      axios.get("/api/products").then((response)=>{
-        setProducts(response.data);
-      })
-  },[])
-
+  useEffect(() => {
+    const loadProducts = async () => {
+      let response = await axios.get("/api/products");
+      setProducts(response.data);
+    };
+    loadProducts();
+  }, []);
+  
   return (
     <>
       <title>E Commerce Website</title>
-      <Header cartProducts={props.cartProducts}/>
+      <Header cartProducts={props.cartProducts} />
       <div>
         <div className="home-page">
           <div className="products-grid">

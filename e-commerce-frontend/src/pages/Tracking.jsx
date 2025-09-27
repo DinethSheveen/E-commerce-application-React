@@ -6,8 +6,8 @@ import { Link } from "react-router";
 function Tracking(props) {
   return (
     <>
-        <Header cartProducts={props.cartProducts}/>
-
+    <title>Tracking</title>
+      <Header cartProducts={props.cartProducts}/>
       <div className="tracking-page">
         <div className="order-tracking">
           <Link className="back-to-orders-link link-primary" to="/orders">

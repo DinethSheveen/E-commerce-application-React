@@ -14,7 +14,7 @@ function Homepage(props) {
     };
     loadProducts();
   }, []);
-  
+
   return (
     <>
       <title>E Commerce Website</title>
@@ -72,7 +72,12 @@ function Homepage(props) {
                     Added
                   </div>
 
-                  <button className="add-to-cart-button button-primary">
+                  <button className="add-to-cart-button button-primary" onClick={()=>{
+                    axios.post("/api/cart-items",{
+                      productId : product.id,
+                      quantity : 1
+                    })
+                  }}>
                     Add to Cart
                   </button>
                 </div>

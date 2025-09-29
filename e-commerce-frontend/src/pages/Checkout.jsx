@@ -4,6 +4,8 @@ import "./Checkout.css";
 import "./Checkout-header.css";
 import { Link } from "react-router";
 import dayjs from "dayjs";
+import { calculateTotalProducts } from "../../public/utils/calcTotalProducts";
+import { formatCurrency } from "../../public/utils/formatCurrency";
 
 function Checkout(props) {
   const cartProducts = props.cartProducts;
@@ -20,7 +22,7 @@ function Checkout(props) {
     };
 
     loadCheckout()
-  }, []);
+  }, [cartProducts]);
 
   return (
     <>
@@ -36,7 +38,7 @@ function Checkout(props) {
           <div className="checkout-header-middle-section">
             Checkout (
             <Link className="return-to-home-link" to="/">
-              3 items
+              {`${calculateTotalProducts(props)} items`}
             </Link>
             )
           </div>
@@ -83,7 +85,7 @@ function Checkout(props) {
                         </div>
                         <div className="product-price">
                           &pound;
-                          {(cartProduct.product.priceCents / 100).toFixed(2)}
+                          {formatCurrency(cartProduct.product.priceCents)}
                         </div>
                         <div className="product-quantity">
                           <span>
@@ -109,9 +111,7 @@ function Checkout(props) {
                           let deliverPrice = "FREE Shipping";
 
                           if (deliveryOption.priceCents > 0) {
-                            deliverPrice = `${(
-                              deliveryOption.priceCents / 100
-                            ).toFixed(2)} - Shipping`;
+                            deliverPrice = `${formatCurrency(deliveryOption.priceCents)} - Shipping`;
                           }
 
                           const updateDeliveryOptions = async() => {
@@ -166,14 +166,14 @@ function Checkout(props) {
                 <div className="payment-summary-row">
                   <div>Items ({paymentSummary.totalItems}):</div>
                   <div className="payment-summary-money">
-                    &pound;{(paymentSummary.productCostCents / 100).toFixed(2)}
+                    &pound;{formatCurrency(paymentSummary.productCostCents)}
                   </div>
                 </div>
 
                 <div className="payment-summary-row">
                   <div>Shipping &amp; handling:</div>
                   <div className="payment-summary-money">
-                    &pound;{(paymentSummary.shippingCostCents / 100).toFixed(2)}
+                    &pound;{formatCurrency(paymentSummary.shippingCostCents)}
                   </div>
                 </div>
 
@@ -181,21 +181,21 @@ function Checkout(props) {
                   <div>Total before tax:</div>
                   <div className="payment-summary-money">
                     &pound;
-                    {(paymentSummary.totalCostBeforeTaxCents / 100).toFixed(2)}
+                    {formatCurrency(paymentSummary.totalCostBeforeTaxCents)}
                   </div>
                 </div>
 
                 <div className="payment-summary-row">
                   <div>Estimated tax (10%):</div>
                   <div className="payment-summary-money">
-                    &pound;{(paymentSummary.taxCents / 100).toFixed(2)}
+                    &pound;{formatCurrency(paymentSummary.taxCents)}
                   </div>
                 </div>
 
                 <div className="payment-summary-row total-row">
                   <div>Order total:</div>
                   <div className="payment-summary-money">
-                    &pound;{(paymentSummary.totalCostCents / 100).toFixed(2)}
+                    &pound;{formatCurrency(paymentSummary.totalCostCents)}
                   </div>
                 </div>
 

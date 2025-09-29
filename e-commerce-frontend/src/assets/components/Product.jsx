@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { formatCurrency } from "../../../public/utils/formatCurrency";
 
 function Product({product}) {
   const [quantity, setQuantity] = useState(1);
@@ -31,7 +32,7 @@ function Product({product}) {
 
       <div className="product-price">
         &pound;
-        {`${(product.priceCents / 100).toFixed(2)}`}
+        {`${formatCurrency(product.priceCents)}`}
       </div>
 
       <div className="product-quantity-container">

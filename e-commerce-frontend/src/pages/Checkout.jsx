@@ -2,7 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import "./Checkout.css";
 import "./Checkout-header.css";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import dayjs from "dayjs";
 import { calculateTotalProducts } from "../../public/utils/calcTotalProducts";
 import { formatCurrency } from "../../public/utils/formatCurrency";
@@ -23,6 +23,13 @@ function Checkout(props) {
 
     loadCheckout()
   }, [cartProducts]);
+
+  const navigate = useNavigate()
+
+  const createOrder = async() => {
+    await axios.post("/api/orders")
+    navigate("/orders")
+  }
 
   return (
     <>
@@ -203,7 +210,7 @@ function Checkout(props) {
                   </div>
                 </div>
 
-                <button className="place-order-button button-primary">
+                <button className="place-order-button button-primary" onClick={createOrder}>
                   Place your order
                 </button>
               </div>

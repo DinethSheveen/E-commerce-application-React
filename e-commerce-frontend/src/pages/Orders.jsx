@@ -4,6 +4,7 @@ import "./Orders.css";
 import Header from "../assets/components/Header";
 import { Link } from "react-router";
 import dayjs from "dayjs"
+import { formatCurrency } from "../../public/utils/formatCurrency";
 
 function Orders(props) {
   const [orders, setOrders] = useState([]);
@@ -38,7 +39,7 @@ function Orders(props) {
                     </div>
                     <div className="order-total">
                       <div className="order-header-label">Total:</div>
-                      <div>&pound;{(order.totalCostCents/100).toFixed(2)}</div>
+                      <div>&pound;{formatCurrency(order.totalCostCents)}</div>
                     </div>
                   </div>
 

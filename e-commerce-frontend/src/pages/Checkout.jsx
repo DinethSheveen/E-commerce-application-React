@@ -62,6 +62,10 @@ function Checkout(props) {
                   }
                 );
 
+                const deleteProduct = async() => {
+                  await axios.delete(`/api/cart-items/${cartProduct.productId}`)
+                }
+
                 return (
                   <div
                     key={cartProduct.product.id}
@@ -97,7 +101,7 @@ function Checkout(props) {
                           <span className="update-quantity-link link-primary">
                             Update
                           </span>
-                          <span className="delete-quantity-link link-primary">
+                          <span className="delete-quantity-link link-primary" onClick={deleteProduct}>
                             Delete
                           </span>
                         </div>

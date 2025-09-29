@@ -114,12 +114,22 @@ function Checkout(props) {
                             ).toFixed(2)} - Shipping`;
                           }
 
+                          const updateDeliveryOptions = async() => {
+                            await axios.put(`/api/cart-items/${cartProduct.productId}`,{
+                              deliveryOptionId : deliveryOption.id
+                            })
+
+                            props.loadCart()
+                          }
+
                           return (
                             <div
+                              onClick={updateDeliveryOptions}
                               key={deliveryOption.id}
                               className="delivery-option"
                             >
                               <input
+                                onChange={()=>{}}
                                 type="radio"
                                 checked={
                                   deliveryOption.id ===

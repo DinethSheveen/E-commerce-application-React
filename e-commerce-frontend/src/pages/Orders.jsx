@@ -33,7 +33,7 @@ function Orders(props) {
                     <div className="order-date">
                       <div className="order-header-label">Order Placed:</div>
                       <div>
-                        {dayjs(order.orderTimeMs).format("MMMM  d")}
+                        {dayjs(order.orderTimeMs).format("MMMM  DD")}
                       </div>
                     </div>
                     <div className="order-total">
@@ -64,15 +64,6 @@ function Orders(props) {
                             Arriving on: {dayjs(orderProduct.estimatedDeliveryTimeMs).format("MMMM d")}
                           </div>
                           <div className="product-quantity">Quantity: {orderProduct.quantity}</div>
-                          <button className="buy-again-button button-primary">
-                            <img
-                              className="buy-again-icon"
-                              src="images/icons/buy-again.png"
-                            />
-                            <span className="buy-again-message">
-                              Add to Cart
-                            </span>
-                          </button>
                         </div>
 
                         <div className="product-actions">

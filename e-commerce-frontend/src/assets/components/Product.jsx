@@ -3,13 +3,24 @@ import axios from "axios";
 import { formatCurrency } from "../../../public/utils/formatCurrency";
 
 function Product({product}) {
+  //A STATE TO MANAGE THE QUANTITY OF A PRODUCT
   const [quantity, setQuantity] = useState(1);
+  //A STATE TO SHOW THE ADDED MESSAGE TO THE USER WHEN A PRODUCT IS ADDED
+  const[message,setMessage] = useState(false)
 
   const addToCart = async()=>{
         await axios.post("/api/cart-items", {
             productId: product.id,
             quantity: quantity,
     });
+
+    setTimeout(()=>{
+       setMessage(true)
+    },500)
+
+    setTimeout(()=>{
+      setMessage(false)
+    },3000)
   }
 
   return (
@@ -57,7 +68,7 @@ function Product({product}) {
 
       <div className="product-spacer"></div>
 
-      <div className="added-to-cart">
+      <div className="added-to-cart" style={{opacity: message?1 : 0}}>
         <img src="images/icons/checkmark.png" />
         Added
       </div>

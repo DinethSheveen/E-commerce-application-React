@@ -1,16 +1,59 @@
-# React + Vite
+# 🛒 E-COMMERCE WEBSITE WITH REACT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📖 Overview
+A modern and responsive e-commerce web application developed using React.js. This application offers a seamless shopping experience, allowing users to add products to the cart, remove them, proceed to checkout and track the products.
 
-Currently, two official plugins are available:
+### ✨ Key Highlights
+- ➕ Add products to the cart  
+- ❌ Remove products from the cart  
+- 📅 Update delivery options  
+- 💾 Store cart in the backend  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
+- Add to cart  
+- Remove from cart  
+- Modify delivery date  
+- Store cart data  
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
+- **REACT.JS**  
+- **CSS** 
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 💻 Usage
+- Browse available products.
+
+- Add products to the cart and remove them if needed.
+
+- Update delivery dates for selected products.
+
+## Screenshots
+
+### Home
+![Home Page](../E%20COMMERCE%20%20PROJECT/e-commerce-frontend/public/images/home.png)
+![Cart](../E%20COMMERCE%20%20PROJECT/./e-commerce-frontend/public/images/cart.png)
+![Orders](../E%20COMMERCE%20%20PROJECT//e-commerce-frontend//public/images/orders.png)
+
+## ⚙️ Installation & Setup
+Since it’s a static project, setup is simple:  
+
+```bash
+git clone https://github.com/DinethSheveen/E-commerce-application-React.git
+cd E-commerce-application-React
+
+cd e-commerce-backend
+npm install
+npm run dev
+
+cd e-commerce-frontend
+npm install
+npm run dev
+```
+
+## Future Implementations
+- Search interactivity

@@ -35,9 +35,9 @@ A modern and responsive e-commerce web application developed using React.js. Thi
 ## Screenshots
 
 ### Home
-![Home Page](../E%20COMMERCE%20%20PROJECT/e-commerce-frontend/public/images/home.png)
-![Cart](../E%20COMMERCE%20%20PROJECT/./e-commerce-frontend/public/images/cart.png)
-![Orders](../E%20COMMERCE%20%20PROJECT//e-commerce-frontend//public/images/orders.png)
+![Home Page](/e-commerce-frontend/public/images/home.png)
+![Cart](/e-commerce-frontend/public/images/cart.png)
+![Orders](/e-commerce-frontend//public/images/orders.png)
 
 ## ⚙️ Installation & Setup
 Since it’s a static project, setup is simple:  

@@ -36,7 +36,11 @@ A modern and responsive e-commerce web application developed using React.js. Thi
 
 ### Home
 ![Home Page](/e-commerce-frontend/public/images/home.png)
+
+### Cart
 ![Cart](/e-commerce-frontend/public/images/cart.png)
+
+### Orders
 ![Orders](/e-commerce-frontend//public/images/orders.png)
 
 ## ⚙️ Installation & Setup
